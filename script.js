@@ -10,20 +10,9 @@ function type() {
 }
 type();
 
-const slideshowImages = [
-  "images/love1.jpg",
-  "images/love2.jpg",
-  "images/love3.jpg"
-];
-let current = 0;
-setInterval(() => {
-  current = (current + 1) % slideshowImages.length;
-  document.getElementById("slideshow-img").src = slideshowImages[current];
-}, 2500);
-
 document.getElementById("love-btn").addEventListener("click", () => {
   document.getElementById("love-btn").style.display = "none";
-  document.querySelector(".slideshow").style.display = "none";
+  document.getElementById("typing-text").style.display = "none";
   const confessionLines = [
     "🌸 Anh biết rằng tình cảm này đã lớn dần từng ngày...",
     "✨ Từ cái nhìn đầu tiên, đến từng nụ cười em dành cho anh.",

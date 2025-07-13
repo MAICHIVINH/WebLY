@@ -14,7 +14,7 @@ body {
 
 .container {
     text-align: center;
-    padding-top: 8vh;
+    padding-top: 280px;
     position: relative;
     z-index: 2;
 }
@@ -24,14 +24,6 @@ h1 {
     color: white;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px #000;
-}
-
-.slideshow img {
-    width: 250px;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    margin-bottom: 20px;
 }
 
 button {
@@ -58,7 +50,7 @@ button:hover {
     border: 3px dashed pink;
     padding: 20px;
     position: fixed;
-    top: 30%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -30%);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
