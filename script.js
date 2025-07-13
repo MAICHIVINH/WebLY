@@ -104,10 +104,19 @@ function acceptLove() {
 
   const dateText = document.createElement("p");
   const today = new Date();
-  const formattedDate = today.toLocaleDateString('vi-VN', {
-    weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric'
+  const formattedTime = today.toLocaleTimeString('vi-VN', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
   });
-  dateText.textContent = `📅 ${formattedDate}`;
+  const formattedDate = today.toLocaleDateString('vi-VN', {
+    weekday: 'long',
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric'
+  });
+  dateText.textContent = `📅 ${formattedTime} - ${formattedDate}`;
+
   dateText.style.marginTop = "20px";
   dateText.style.color = "#555";
   dateText.style.fontStyle = "italic";
