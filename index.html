@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gửi Em 💌</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="heart-canvas"></canvas>
+    <audio id="bg-music" src="/music/6799898895282.mp3" autoplay loop></audio>
+    <div class="container">
+        <h1 id="typing-text"></h1>
+        <div class="slideshow">
+            <img id="slideshow-img" src="images/love1.jpg" alt="Memory" />
+        </div>
+        <button id="love-btn">Anh yêu em ❤️</button>
+        <div class="popup pretty-popup" id="confession-popup">
+            <img src="sticker/Heart Love GIF.gif" class="sticker sticker1">
+            <img src="/sticker/I Love You GIF.gif" class="sticker sticker2">
+            <img src="/sticker/My Love Flower GIF by cintascotch.gif" class="sticker sticker3">
+            <div class="confession-box">
+                <div class="confession-header">💌 Gửi Em 💌</div>
+                <div id="confession-content"></div>
+                <button onclick="showLovePopup()">🥺 Làm người yêu anh nhé?</button>
+            </div>
+        </div>
+        <div class="popup" id="love-popup">
+            <p>Làm người yêu anh nhé? 💕</p>
+            <button onclick="acceptLove()">Yes 💖</button>
+            <button onclick="denyLove()">No 😢</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

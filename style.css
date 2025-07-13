@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    padding-top: 8vh;
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 2em;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.slideshow img {
+    width: 250px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    background-color: #ff6b81;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff4757;
+}
+
+.popup {
+    display: none;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(6px);
+    border: 3px dashed pink;
+    padding: 20px;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.confession-box {
+    padding: 10px;
+    border-radius: 15px;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.confession-header {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    color: #e84393;
+    font-weight: bold;
+    animation: popIn 1s ease-in-out;
+}
+
+#confession-content {
+    text-align: left;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    font-size: 1.1em;
+    color: #333;
+}
+
+#heart-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.sticker {
+    position: absolute;
+    width: 60px;
+    z-index: 999;
+    animation: float 4s infinite ease-in-out;
+}
+
+.sticker1 {
+    top: -30px;
+    left: -30px;
+}
+
+.sticker2 {
+    bottom: -40px;
+    right: -30px;
+}
+
+.sticker3 {
+    top: -20px;
+    right: -20px;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(3deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+@keyframes flyUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-150vh);
+        opacity: 0;
+    }
+}
