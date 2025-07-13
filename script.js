@@ -80,15 +80,15 @@ function acceptLove() {
     }, 10);
     for (let i = 0; i < 50; i++) createExplosionHeart();
     const msg = document.createElement("div");
-    msg.innerHTML = "Em đã đồng ý rồi!<br><br>💖 Cảm ơn em đã tin anh.<br>Anh hứa sẽ bên em mãi mãi.";
+    msg.innerHTML = "Em đã đồng ý rồi!<br><br>💖 Cảm ơn em đã tin anh.Anh hứa sẽ bên em mãi mãi.";
     msg.style.position = "fixed";
     msg.style.top = "50%";
     msg.style.left = "50%";
     msg.style.transform = "translate(-50%, -50%)";
     msg.style.background = "white";
-    msg.style.padding = "10px";
+    msg.style.padding = window.innerWidth < 600 ? "20px" : "30px";
     msg.style.borderRadius = "20px";
-    msg.style.fontSize = "1.2em";
+    msg.style.fontSize = window.innerWidth < 600 ? "1.8em" : "1.4em";
     msg.style.color = "#e84118";
     msg.style.boxShadow = "0 0 30px rgba(0,0,0,0.2)";
     msg.style.zIndex = "99999";
