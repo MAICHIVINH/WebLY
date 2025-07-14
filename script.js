@@ -103,19 +103,31 @@ function acceptLove() {
   containerDiv.appendChild(popupText);
 
   const dateText = document.createElement("p");
-  const today = new Date();
-  const formattedTime = today.toLocaleTimeString('vi-VN', {
+dateText.style.marginTop = "20px";
+dateText.style.color = "#555";
+dateText.style.fontStyle = "italic";
+dateText.style.fontSize = "0.9em";
+containerDiv.appendChild(dateText);
+
+// Hàm cập nhật thời gian thực
+function updateTime() {
+  const now = new Date();
+  const formattedTime = now.toLocaleTimeString('vi-VN', {
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit'
   });
-  const formattedDate = today.toLocaleDateString('vi-VN', {
+  const formattedDate = now.toLocaleDateString('vi-VN', {
     weekday: 'long',
     day: '2-digit',
     month: '2-digit',
     year: 'numeric'
   });
   dateText.textContent = `📅 ${formattedTime} - ${formattedDate}`;
+}
+updateTime(); // Gọi lần đầu
+setInterval(updateTime, 1000); // Cập nhật mỗi giây
+
 
   dateText.style.marginTop = "20px";
   dateText.style.color = "#555";
