@@ -1,14 +1,24 @@
 const text = "Em ơi, anh có điều này muốn nói...";
 const typingText = document.getElementById("typing-text");
 let i = 0;
+
 function type() {
   if (i < text.length) {
     typingText.innerHTML += text.charAt(i);
     i++;
     setTimeout(type, 100);
+  } else {
+
+    const loveBtn = document.getElementById("love-btn");
+    loveBtn.style.display = "inline-block";
+    loveBtn.style.opacity = 0;
+    loveBtn.style.transition = "opacity 0.5s";
+    setTimeout(() => loveBtn.style.opacity = 1, 10);
   }
 }
+
 type();
+
 
 document.getElementById("love-btn").addEventListener("click", () => {
   document.getElementById("love-btn").style.display = "none";
@@ -28,17 +38,21 @@ document.getElementById("love-btn").addEventListener("click", () => {
   document.getElementById("confession-popup").style.display = "block";
   let i = 0;
   function typeLine() {
-    if (i < confessionLines.length) {
-      const p = document.createElement("p");
-      p.textContent = confessionLines[i];
-      p.style.opacity = 0;
-      p.style.transition = "opacity 0.6s";
-      container.appendChild(p);
-      setTimeout(() => (p.style.opacity = 1), 100);
-      i++;
-      setTimeout(typeLine, 700);
-    }
+  if (i < confessionLines.length) {
+    const p = document.createElement("p");
+    p.textContent = confessionLines[i];
+    p.style.opacity = 0;
+    p.style.transition = "opacity 0.6s";
+    container.appendChild(p);
+    setTimeout(() => (p.style.opacity = 1), 100);
+    i++;
+    setTimeout(typeLine, 700);
+  } else {
+    
+    document.getElementById("final-button").style.display = "inline-block";
   }
+}
+
   typeLine();
 });
 
@@ -103,30 +117,30 @@ function acceptLove() {
   containerDiv.appendChild(popupText);
 
   const dateText = document.createElement("p");
-dateText.style.marginTop = "20px";
-dateText.style.color = "#555";
-dateText.style.fontStyle = "italic";
-dateText.style.fontSize = "0.9em";
-containerDiv.appendChild(dateText);
+  dateText.style.marginTop = "20px";
+  dateText.style.color = "#555";
+  dateText.style.fontStyle = "italic";
+  dateText.style.fontSize = "0.9em";
+  containerDiv.appendChild(dateText);
 
-// Hàm cập nhật thời gian thực
-function updateTime() {
-  const now = new Date();
-  const formattedTime = now.toLocaleTimeString('vi-VN', {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit'
-  });
-  const formattedDate = now.toLocaleDateString('vi-VN', {
-    weekday: 'long',
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric'
-  });
-  dateText.textContent = `📅 ${formattedTime} - ${formattedDate}`;
-}
-updateTime(); // Gọi lần đầu
-setInterval(updateTime, 1000); // Cập nhật mỗi giây
+  // Hàm cập nhật thời gian thực
+  function updateTime() {
+    const now = new Date();
+    const formattedTime = now.toLocaleTimeString('vi-VN', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+    const formattedDate = now.toLocaleDateString('vi-VN', {
+      weekday: 'long',
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+    });
+    dateText.textContent = `📅 ${formattedTime} - ${formattedDate}`;
+  }
+  updateTime(); // Gọi lần đầu
+  setInterval(updateTime, 1000); // Cập nhật mỗi giây
 
 
   dateText.style.marginTop = "20px";
